@@ -27,9 +27,11 @@ class LinkedList {
     prepend(value){
         const newNode = new Node(value);
         if(this.head){
-            this.head.next = this.head;
-            this.head = newNode;
+            newNode.next = this.head;
+        } else {
+            this.tail = newNode
         }
+        this.head = newNode;
         this.size++;
     }
 }
@@ -59,7 +61,7 @@ list.append("turtle");
 
 
 
-console.log(list); 
-console.log(list.head.value);  
-console.log(list.tail.value);  
-console.log(list.size); 
+console.log(list);
+console.log(list.head.value);
+console.log(list.tail.value);
+console.log(list.size);
