@@ -23,6 +23,15 @@ class LinkedList {
         }
         this.size++;
     }
+
+    prepend(value){
+        const newNode = new Node(value);
+        if(this.head){
+            this.head.next = this.head;
+            this.head = newNode;
+        }
+        this.size++;
+    }
 }
 
 
@@ -40,6 +49,7 @@ const list = new LinkedList();
 list.append("dog");
 list.append("cat");
 list.append("hamster");
+list.prepend("parrot");
 list.append("snake");
 list.append("turtle");
 
