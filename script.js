@@ -83,6 +83,15 @@ class LinkedList {
         }
     }
 
+    toString(){
+        let curr = this.head
+        while(curr !== null){
+                console.log(`${curr.value} -> `)    
+                curr = curr.nextNode;
+        } 
+        console.log("null")
+    }
+
 }
 
 const list = new LinkedList();
@@ -93,4 +102,4 @@ list.append("hamster");
 list.prepend("parrot");
 list.append("snake");
 list.append("turtle");
-list.find("snake")
+list.toString()
