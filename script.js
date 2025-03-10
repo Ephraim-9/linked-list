@@ -58,17 +58,18 @@ class LinkedList {
         curr.nextNode = null;
         this.size--;
     }
+
+    contains(value){
+        let curr = this.head
+        while(curr !== null && curr.value !== value){
+            curr = curr.nextNode;
+        } if (curr !== null){
+            console.log(`list contains:  ${value}`)
+        } else {
+            console.log(`list does not contain: ${value}`)
+        }
+    }
 }
-
-
-
-
-
-
-
-
-
-
 
 const list = new LinkedList();
 
@@ -78,18 +79,4 @@ list.append("hamster");
 list.prepend("parrot");
 list.append("snake");
 list.append("turtle");
-
-
-
-
-
-
-list.pop()
-console.log(list.at(5)?.value)
-console.log(list)
-
-
-
-
-
-
+list.contains("snake")
